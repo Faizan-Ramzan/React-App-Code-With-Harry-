@@ -22,6 +22,13 @@ export default function TextForm(props) {
 
     const [text, setText] = useState("");
 
+    const countWords = (str)=>{
+        str = str.replace(/(^\s*)|(\s*$)/gi,"");
+        str = str.replace(/[ ]{2,}/gi," ");
+        str = str.replace(/\n /,"\n");
+        return str.split(' ').length;
+    }
+
     return (
         <>
             <div className="container mt-5">
@@ -35,7 +42,7 @@ export default function TextForm(props) {
             </div>
             <div className="container my-3">
                 <h1>Your Text Summary</h1>
-                <p>{text.split(" ").length} words and {text.length} characters</p>
+                <p>{countWords(text)} words and {text.length} characters</p>
                 <p>{0.008 * text.split(" ").length} Minutes Read</p>
                 <h3>Preview</h3>
                 <pre>
