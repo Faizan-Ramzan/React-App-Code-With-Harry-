@@ -58,7 +58,7 @@ function App() {
     <>
       <Navbar title="Global" aboutText="About Global" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
-      <TextForm showAlert={showAlert} heading="Enter Text to analyze below" mode={mode} />
+      <TextForm showAlert={showAlert} heading="Enter Text to analyze below Text" mode={mode} />
       {/* <About /> */}
     </>
   );
