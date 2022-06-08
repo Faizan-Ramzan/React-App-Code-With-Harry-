@@ -20,17 +20,37 @@ function App() {
     }, 1500);
   }
 
-  const toggleMode = ()=>{
-    if(mode === 'light'){
-      setMode('dark');
-      document.body.style.backgroundColor = '#272a2b';
-      document.body.style.color = 'white';
-      showAlert("Dark mode has been enabled", "success");
-    }else{
+  // const toggleMode = (colorName)=>{
+  //   if(mode === 'light'){
+  //     setMode('dark');
+  //     console.log(colorName.target.attributes.datacolor.nodeValue);
+  //     document.body.style.backgroundColor = '#272a2b';
+  //     document.body.style.color = 'white';
+  //     showAlert("Dark mode has been enabled", "success");
+  //   }else{
+  //     setMode('light');
+  //     document.body.style.backgroundColor = 'white';
+  //     document.body.style.color = '#272a2b';
+  //     showAlert("Light mode has been enabled", "success");
+  //   }
+  // }
+
+  const toggleMode = (colorName)=>{
+    if(colorName === 'light'){
       setMode('light');
       document.body.style.backgroundColor = 'white';
       document.body.style.color = '#272a2b';
       showAlert("Light mode has been enabled", "success");
+    }else if(colorName === 'dark'){
+      setMode('dark');
+      document.body.style.backgroundColor = '#272a2b';
+      document.body.style.color = 'white';
+      showAlert("Dark mode has been enabled", "success");
+    }else if (colorName === 'red'){
+      setMode('red');
+      document.body.style.backgroundColor = '#dc3545';
+      document.body.style.color = 'white';
+      showAlert("Red mode has been enabled", "success");
     }
   }
 
