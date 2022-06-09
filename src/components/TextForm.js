@@ -23,10 +23,7 @@ export default function TextForm(props) {
     const [text, setText] = useState("");
 
     const countWords = (str)=>{
-        str = str.replace(/(^\s*)|(\s*$)/gi,"");
-        str = str.replace(/[ ]{2,}/gi," ");
-        str = str.replace(/\n /,"\n");
-        return str.split(' ').length;
+        return str.split(' ').filter((element)=>{return element.length!==0}).length;
     }
 
     return (
